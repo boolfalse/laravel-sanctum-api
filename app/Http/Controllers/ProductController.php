@@ -115,4 +115,15 @@ class ProductController extends Controller
             ], 409);
         }
     }
+
+    public function search(string $term)
+    {
+        $products = Product::where('title', 'like', '%' . $term . '%')->get();
+
+        return response()->json([
+            'success' => true,
+            'message' => "Got all products.",
+            'products' => $products,
+        ], 200);
+    }
 }
