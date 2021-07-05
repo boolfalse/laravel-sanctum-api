@@ -40,7 +40,7 @@ class ProductController extends Controller
             'success' => true,
             'message' => "Product created successfully.",
             'products' => $product,
-        ], 200);
+        ], 201);
     }
 
     public function show($id)
@@ -87,7 +87,7 @@ class ProductController extends Controller
                 'success' => true,
                 'message' => "Product updated successfully.",
                 'product' => $product,
-            ], 404);
+            ], 201);
         } else {
             return response()->json([
                 'success' => false,
@@ -107,7 +107,7 @@ class ProductController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => "Product deleted successfully.",
-            ], 404);
+            ], 204);
         } else {
             return response()->json([
                 'success' => false,
