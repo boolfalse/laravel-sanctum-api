@@ -33,7 +33,7 @@ sudo chgrp -R www-data storage bootstrap/cache/
 sudo chmod -R ug+rwx storage bootstrap/cache/
 ```
 
-- [OPTIONAL] Change PHP version for test server.
+- Add "Accept: application/json" to the POST,PUT,DELETE API-endpoints.
 
 ### Resources:
 
