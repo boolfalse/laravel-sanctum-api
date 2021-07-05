@@ -4,8 +4,8 @@
 ### Prerequisites:
 
 - PHP, PHP-CLI >=7.4 & Composer;
-- MySQL >=5.7;
-- Apache or Nginx webserver;
+- Apache webserver;
+- SQLite driver installed;
 
 ### Installation:
 
@@ -14,7 +14,13 @@ git clone <REPOSITORY_ADDRESS> laravel-sanctum-api
 cd laravel-sanctum-api/
 ```
 
-- Setup a MySQL DB and ".env".
+- Install SQLite driver for UNIX OS and ".env".
+```
+sudo apt update
+sudo apt install php-sqlite3
+sudo apt install php7.4-sqlite3
+sudo systemctl restart apache2
+```
 
 - [OPTIONAL] [Setup](https://stackoverflow.com/a/37266353) Laravel resources (files/folders) ownerships/permissions
 ```
