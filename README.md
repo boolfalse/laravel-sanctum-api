@@ -37,10 +37,17 @@ sudo chmod -R ug+rwx storage bootstrap/cache/
 
 ### Resources:
 
+- [Postman Collection shared public link](https://www.getpostman.com/collections/04fd3912e4c490df29da)
 - [Traversy Media - Mar 31, 2021 - Laravel 8 REST API With Sanctum Authentication](https://www.youtube.com/watch?v=MT-GJQIY3EU)
+- [Brad Traversy - Laravel Sanctum API](https://github.com/bradtraversy/laravel-sanctum-api)
+- [Laravel Sanctum - official documentation](https://laravel.com/docs/8.x/sanctum)
+- [failed to open stream: Permission denied](https://stackoverflow.com/a/48794292)
+- [Permission denied ".../storage/logs/laravel.log could not be opened"](https://github.com/BookStackApp/BookStack/issues/436#issuecomment-395964366)
 
 ### Developed by:
 
 [BoolFalse](https://boolfalse.com/)
 
 ### TODOs:
+
+- Fix SQLite-related error "SQLSTATE[HY000]General Error: 8 attempt to write a readonly database"
