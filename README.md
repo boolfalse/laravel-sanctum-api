@@ -1,5 +1,5 @@
 
-## Sanctum API (Laravel 8).
+## Sanctum REST API with SQLite (Laravel v8).
 
 ### Prerequisites:
 
@@ -22,7 +22,7 @@ sudo apt install php7.4-sqlite3
 sudo systemctl restart apache2
 ```
 
-- [OPTIONAL] [Setup](https://stackoverflow.com/a/37266353) Laravel resources (files/folders) ownerships/permissions
+- [About Setup](https://stackoverflow.com/a/37266353) Laravel resources (files/folders) ownerships/permissions
 ```
 # one-time command
 sudo usermod -a -G www-data $USER
@@ -31,6 +31,18 @@ sudo usermod -a -G www-data $USER
 sudo chown -R $USER:www-data storage/ bootstrap/cache/
 sudo chgrp -R www-data storage bootstrap/cache/
 sudo chmod -R ug+rwx storage bootstrap/cache/
+
+# setup SQLite file write permissions for avoiding this error:
+# SQLSTATE[HY000]General Error: 8 attempt to write a readonly database
+# NOTE: we will work on "database" folder, but not only on "database.sqlite" file
+sudo chgrp -R www-data database/
+chown -R $USER database/
+
+# after this make sure you have appropriate permission/ownership
+# for "database/database.sqlite" file
+cd database/
+stat -c "%a %n" *
+ls -la
 ```
 
 - Add "Accept: application/json" to the POST,PUT,DELETE API-endpoints.
@@ -47,7 +59,3 @@ sudo chmod -R ug+rwx storage bootstrap/cache/
 ### Developed by:
 
 [BoolFalse](https://boolfalse.com/)
-
-### TODOs:
-
-- Fix SQLite-related error "SQLSTATE[HY000]General Error: 8 attempt to write a readonly database"

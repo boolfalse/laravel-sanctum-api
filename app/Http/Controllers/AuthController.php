@@ -48,7 +48,8 @@ class AuthController extends Controller
             ], 401);
         }
 
-        $token = $user->createToken('myapptoken')->plainTextToken;
+        // argument of "createToken" method could be anything
+        $token = $user->createToken(config('app.key'))->plainTextToken;
 
         return response()->json([
             'success' => true,
