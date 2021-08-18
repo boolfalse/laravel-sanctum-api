@@ -119,10 +119,11 @@ class ProductController extends Controller
     public function search(string $term)
     {
         $products = Product::where('title', 'like', '%' . $term . '%')->get();
+        $count = $products->count();
 
         return response()->json([
             'success' => true,
-            'message' => "Got all products.",
+            'message' => $count == 0 ? "No found products." : "Found {$count} product(s).",
             'products' => $products,
         ], 200);
     }
